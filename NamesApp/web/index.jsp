@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Search!</h1>
+        <h1>Search for names!</h1>
         <form method="get" action="NameController">
             <input type="text" name="search"/>
             <input type="submit" value="search"/>
