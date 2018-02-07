@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : Feb 6, 2018, 6:25:46 PM
+    Document   : nameDetail
+    Created on : Feb 6, 2018, 8:25:34 PM
     Author     : mjmersenski
 --%>
 
@@ -12,10 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Search!</h1>
-        <form method="get" action="NameController">
-            <input type="text" name="search"/>
-            <input type="submit" value="search"/>
-        </form>
+        <h1>Hello Detail!</h1>
     </body>
 </html>
