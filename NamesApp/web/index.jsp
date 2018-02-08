@@ -60,7 +60,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a></li>
+          <li><a href="#"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bicycle"></i> Products <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -79,12 +79,19 @@
         </ul>
 
         <!-- search bar -->
-        <form class="navbar-form navbar-left">
+        <form method="get" action="NameController" class="navbar-form navbar-left">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" name="search" placeholder="Search">
           </div>
           <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
         </form>
+        
+        <!--
+        <form method="get" action="NameController">
+            <input type="text" name="search"/>
+            <input type="submit" value="search"/>
+        </form>
+        -->
 
     </div><!-- /.navbar-collapse -->      
     </div>
@@ -97,3 +104,4 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
+
