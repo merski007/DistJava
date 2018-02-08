@@ -28,7 +28,7 @@
     <title>Java Cycles</title>
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -75,23 +75,40 @@
     </nav>
       
     <!-- body content under the header -->
-        <div class="jumbotron">
-            <h1>Java Cycles</h1>
-            <p class="lead">Java Cycles is the leading authority on new and fresh cycling trends.</p>
-            <p><button id="learnMore" class="btn btn-primary btn-lg">Learn more &raquo;</button></p>
-        </div>
+    
+  <h2>Shopping Cart</h2>
+
+     <table class="table table-hover table-responsive">
+        <thead>
+            <tr class="font-md">
+                <th>Product Name</th>
+                <th>Qty</th>
+                <th>Unit Price</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="product-row" id="prod1">
+                <td>Trek Madone 9.9</td>
+                <td>1</td>
+                <td>$12,100</td>
+                <td>$12,100</td>
+            </tr>
+            <tr class="product-row" id="prod2">
+                <td>Domane SLR 9 Disc</td>
+                <td>2</td>
+                <td>$12,300</td>
+                <td>$24,600</td>
+            </tr>
+        </tbody>
+    </table>
 
     <!-- Optional JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function () {
-            //alert("this works");
-            $('#learnMore').click(function () {
-                alert("You clicked this button, you're awesome!!!");
-            });
-        });
+        //insert javascript here
     </script>
   
   
