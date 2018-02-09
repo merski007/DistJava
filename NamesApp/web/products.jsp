@@ -4,6 +4,8 @@
     Author     : mjmersenski
 --%>
 
+<%@page import="edu.wctc.dj.week3.model.Bike"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,7 +65,7 @@
         </ul>
 
         <!-- search bar -->
-        <form method="get" action="NameController" class="navbar-form navbar-left">
+        <form method="get" action="BikeController" class="navbar-form navbar-left">
           <div class="form-group">
             <input type="text" class="form-control" name="search" placeholder="Search">
           </div>
@@ -76,7 +78,7 @@
       
     <!-- body content under the header -->
     
-    <h2>Products</h2>
+<!--    <h2>Products</h2>
     <h4>Check out fresh selection below</h4>
     <table class="table table-hover table-responsive">
         <thead>
@@ -107,6 +109,27 @@
                 <td>Boone 7 Disc is our lightest, fastest cyclocross bike. It charges over barriers, through mud and sand pits, and can handle a heavy dose of beer spray from its top spot on the podium. This is our highest-end cyclocross build, with Front and Rear IsoSpeed, hydraulic disc brakes for all-condition stopping power, and a race-ready 1x11 drivetrain.</td>
                 <td>$3,999</td>
             </tr>
+        </tbody>
+    </table>-->
+    
+    <table>
+        <thead>
+            <td>Manufacturer</td>
+            <td>Model Name</td>
+            <td>Price</td>
+        </thead>
+        <tbody>
+            <%
+                List<Bike> bikeList = (List<Bike>) request.getAttribute("bikeList");
+                for(Bike bike : bikeList){
+            %>
+            <tr class="product-row">
+                <td><%= bike.getManufacturer() %></td>
+                <td><%= bike.getModelName() %></td>
+                <td><%= bike.getPrice() %></td>
+            </tr>    
+            <%  }
+            %>
         </tbody>
     </table>
 

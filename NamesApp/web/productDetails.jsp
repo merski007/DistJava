@@ -4,6 +4,7 @@
     Author     : mjmersenski
 --%>
 
+<%@page import="edu.wctc.dj.week3.model.Bike"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,7 +64,7 @@
         </ul>
 
         <!-- search bar -->
-        <form method="get" action="NameController" class="navbar-form navbar-left">
+        <form method="get" action="BikeController" class="navbar-form navbar-left">
           <div class="form-group">
             <input type="text" class="form-control" name="search" placeholder="Search">
           </div>
@@ -76,7 +77,7 @@
       
     <!-- body content under the header -->
     
- <h2>Trek Madone 9.9</h2>
+<!--    <h2>Trek Madone 9.9</h2>
     <h4>Faster then FAST!!!!</h4>
     <div class="container">
         <div class="row">
@@ -85,6 +86,24 @@
             </div>
             <div class="col-md-4">
                 <img src="css/images/1478000_2018_A_1_MADONE_9_9_C_H2.jpg" alt="Madone 9.9" class="prodDetailImg">
+            </div>
+        </div>
+    </div>-->
+
+    <% 
+        //List<Name> nameList = (List<Name>) request.getAttribute("nameList");
+        Bike bike = (Bike) request.getAttribute("bike");
+    %>
+
+    <h2><%= bike.getModelName() %></h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <p class="prodDetailDesc">Manufacturer: <%= bike.getManufacturer() %></p>
+                <p class="prodDetailDesc">Description: <%= bike.getModelDescription() %></p>
+            </div>
+            <div class="col-md-4">
+                <img src="css/images/<%= bike.getModelImage() %>" alt="<%= bike.getModelName() %>" class="prodDetailImg">
             </div>
         </div>
     </div>

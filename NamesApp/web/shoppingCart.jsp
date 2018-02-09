@@ -63,7 +63,7 @@
         </ul>
 
         <!-- search bar -->
-        <form method="get" action="NameController" class="navbar-form navbar-left">
+        <form method="get" action="BikeController" class="navbar-form navbar-left">
           <div class="form-group">
             <input type="text" class="form-control" name="search" placeholder="Search">
           </div>
