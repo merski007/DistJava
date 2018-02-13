@@ -1,4 +1,4 @@
-<%-- 
+    <%-- 
     Document   : index
     Created on : Feb 6, 2018, 6:25:46 PM
     Author     : mjmersenski
@@ -48,7 +48,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bicycle"></i> Products <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="products.jsp">Bikes</a></li>
+              <li><a href="BikeController">Bikes</a></li>
               <li><a href="#">Clothing</a></li>
               <li><a href="#">Accessories</a></li>
               <!--
