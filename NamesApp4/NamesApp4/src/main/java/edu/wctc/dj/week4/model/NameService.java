@@ -7,8 +7,10 @@ import java.util.List;
 public class NameService {
 
     private List<Name> nameList = Arrays.asList(
-            new Name("1", "Fred", "Jones"),
-            new Name("2", "Abroham", "Lincoln")
+            new Name("1", "Fred", "Jones",
+                    new Address("123 main st", "milwaukee", "wi", "53223")),
+            new Name("2", "Patrick", "Cudahy",
+                    new Address("456 cedar st", "cudahy", "wi", "50172"))
     );
 
     public Name getName(String id) {
@@ -28,8 +30,8 @@ public class NameService {
     public List<Name> findNames(String search) {
         search = search.toLowerCase();
         List<Name> theList = new ArrayList<>();
-        for(Name name: nameList){
-            if(name.getFirst().toLowerCase().startsWith(search) || name.getLast().toLowerCase().startsWith(search)){
+        for (Name name : nameList) {
+            if (name.getFirst().toLowerCase().startsWith(search) || name.getLast().toLowerCase().startsWith(search)) {
                 theList.add(name);
             }
         }
