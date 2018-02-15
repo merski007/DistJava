@@ -4,7 +4,7 @@
     Author     : mjmersenski
 --%>
 
-<%@page import="edu.wctc.dj.week3.model.Bike"%>
+<%@page import="edu.wctc.dj.week4.model.Bike"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
