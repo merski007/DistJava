@@ -4,8 +4,8 @@
     Author     : mjmersenski
 --%>
 
-<%@page import="edu.wctc.dj.week4.model.Bike"%>
 <%@page import="java.util.List"%>
+<%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,23 +79,19 @@
         <table class="table table-hover table-responsive">
             <thead>
                 <tr class="font-md">
-                    <td>Manufacturer</td>
-                    <td>Model Name</td>
-                    <td>Price</td>
+                    <td><b>Manufacturer</b></td>
+                    <td><b>Model Name</b></td>
+                    <td><b>Price</b></td>
                 </tr>
             </thead>
             <tbody>
-                <%
-                    List<Bike> bikeList = (List<Bike>) request.getAttribute("bikeList");
-                    for (Bike bike : bikeList) {
-                %>
-                <tr class="product-row">
-                    <td><a href="BikeController?id=<%= bike.getId()%>"><%= bike.getManufacturer()%></a></td>
-                    <td><%= bike.getModelName()%></td>
-                    <td><%= bike.getPrice()%></td>
-                </tr>    
-                <%  }
-                %>
+                <c:forEach var="bike" items="${bikeList}">
+                    <tr class="product-row">
+                        <td><a href="BikeController?id=${bike.id}">${bike.manufacturer}</a></td>
+                        <td>${bike.modelName}</td>
+                        <td>${bike.price}</td>
+                    </tr>        
+                </c:forEach>
             </tbody>
         </table>
 
