@@ -4,7 +4,7 @@
     Author     : mjmersenski
 --%>
 
-<%@page import="edu.wctc.dj.week4.model.Bike"%>
+<%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,13 +39,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.jsp">Java Cycles</a>
+        <a class="navbar-brand" href="index.html">Java Cycles</a>
       </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="index.jsp"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a></li>
+          <li><a href="index.html"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bicycle"></i> Products <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -76,34 +76,15 @@
     </nav>
       
     <!-- body content under the header -->
-    
-<!--    <h2>Trek Madone 9.9</h2>
-    <h4>Faster then FAST!!!!</h4>
+    <h2><c:out value="${bike.modelName}" /></h2>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <p class="prodDetailDesc">It doesn't get better than this. Madone 9.9 is the final stop in your search for a top-of-the-line superbike. It's the choice of the pros of Trek-Segafredo, and for good reason: advanced road bike aerodynamics, light weight, the highest level parts spec, and the finest ride quality available.</p>
+                <p class="prodDetailDesc"><b>Manufacturer:</b> <c:out value="${bike.manufacturer}" /></p>
+                <p class="prodDetailDesc"><b>Description:</b> <c:out value="${bike.modelDescription}" /></p>
             </div>
             <div class="col-md-4">
-                <img src="css/images/1478000_2018_A_1_MADONE_9_9_C_H2.jpg" alt="Madone 9.9" class="prodDetailImg">
-            </div>
-        </div>
-    </div>-->
-
-    <% 
-        //List<Name> nameList = (List<Name>) request.getAttribute("nameList");
-        Bike bike = (Bike) request.getAttribute("bike");
-    %>
-
-    <h2><%= bike.getModelName() %></h2>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <p class="prodDetailDesc">Manufacturer: <%= bike.getManufacturer() %></p>
-                <p class="prodDetailDesc">Description: <%= bike.getModelDescription() %></p>
-            </div>
-            <div class="col-md-4">
-                <img src="css/images/<%= bike.getModelImage() %>" alt="<%= bike.getModelName() %>" class="prodDetailImg">
+                <img src="css/images/<c:out value="${bike.modelImage}" />" alt="<c:out value="${bike.modelName}" />" class="prodDetailImg">
             </div>
         </div>
     </div>
