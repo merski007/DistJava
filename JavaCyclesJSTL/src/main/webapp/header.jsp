@@ -1,3 +1,9 @@
+<%-- 
+Document   : index
+Created on : Feb 6, 2018, 6:25:46 PM
+Author     : mjmersenski
+--%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -31,21 +37,27 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Java Cycles</a>
+                    <a class="navbar-brand" href="index.jsp">Java Cycles</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a></li>
+                        <li><a href="index.jsp"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bicycle"></i> Products <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="ProductController?type=bicycle">Bikes</a></li>
-                                <li><a href="#">Clothing</a></li>
-                                <li><a href="#">Accessories</a></li>
+                                <li><a href="ProductController?type=clothing">Clothing</a></li>
+                                <li><a href="ProductController?type=accessory">Accessories</a></li>
+                                <!--
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                                -->
                             </ul>
-                            <li><a href="shoppingCart.jsp"><i class="fas fa-shopping-cart"></i> Shopping Cart </a></li>
+                        <li><a href="ShoppingCartController"><i class="fas fa-shopping-cart"></i> Shopping Cart </a></li>
                         </li>
                     </ul>
 
@@ -60,27 +72,11 @@
                 </div><!-- /.navbar-collapse -->      
             </div>
         </nav>
-
-        <!-- body content under the header -->
-        <div class="jumbotron">
-            <h1>Java Cycles</h1>
-            <p class="lead">Java Cycles is the leading authority on new and fresh cycling trends.</p>
-            <p><button id="learnMore" class="btn btn-primary btn-lg">Learn more &raquo;</button></p>
-        </div>
-
+        
         <!-- Optional JavaScript -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script>
-            $(document).ready(function () {
-                //alert("this works");
-                $('#learnMore').click(function () {
-                    alert("You clicked this button, you're awesome!!!");
-                });
-            });
-        </script>
-
-
     </body>
 </html>
+
