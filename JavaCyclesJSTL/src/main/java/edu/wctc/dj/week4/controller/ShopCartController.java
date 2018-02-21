@@ -1,7 +1,9 @@
 package edu.wctc.dj.week4.controller;
 
-import edu.wctc.dj.week4.model.Bike;
-import edu.wctc.dj.week4.model.BikeService;
+import edu.wctc.dj.week4.model.LineItem;
+import edu.wctc.dj.week4.model.Product;
+import edu.wctc.dj.week4.model.ProductService;
+import edu.wctc.dj.week4.model.ShoppingCart;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -56,30 +58,35 @@ public class ShopCartController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        ShoppingCart sc = new ShoppingCart("1");
+        ProductService ps = new ProductService();
 //        BikeService bikeService = new BikeService();
         RequestDispatcher dispatcher = null;
+        
+        sc.addLineItem(ps.getProduct("1"), 1);
+        sc.addLineItem(ps.getProduct("4"), 2);
 //        
-//        String id = request.getParameter("id");
+        String cart = request.getParameter("cart");
 //        String search = request.getParameter("search");
 //        
-//        if (id != null) {
-//            Bike bike = bikeService.getBike(id);
-//            request.setAttribute("bike", bike);
-//            dispatcher = request.getRequestDispatcher("/productDetails.jsp");
-//            // go to productDetail.jsp
-//        } 
+        if (cart != null) {
+            List<LineItem> productList = sc.getLineItemArrayList();
+            request.setAttribute("cart", cart);
+            dispatcher = request.getRequestDispatcher("/shoppingCart.jsp");
+            // go to shoppingCart.jsp
+        } 
 ////        else if (search != null) {
 ////            List<Name> nameList = nameService.findNames(search);
 ////            request.setAttribute("nameList", nameList);
 ////            dispatcher = request.getRequestDispatcher("/nameList.jsp");
 ////            // go to nameList.jsp
 ////        } 
-//        else {
-//            List<Bike> bikeList = bikeService.getAllBikes();
-//            request.setAttribute("bikeList", bikeList);
-//            dispatcher = request.getRequestDispatcher("/products.jsp");
-//            // go to products.jsp
-//        }
+        else {
+            List<LineItem> productList = sc.getLineItemArrayList();
+            request.setAttribute("cart", productList);
+            dispatcher = request.getRequestDispatcher("/shoppingCart.jsp");
+            // go to shoppingCart.jsp
+        }
 
         dispatcher.forward(request, response);
     }

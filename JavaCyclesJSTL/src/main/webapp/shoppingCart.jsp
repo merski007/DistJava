@@ -15,6 +15,25 @@
         <table class="table table-hover table-responsive">
             <thead>
                 <tr class="font-md">
+                    <td><b>Product Name</b></td>
+                    <td><b>Qty</b></td>
+                    <td><b>Unit Price</b></td>
+                    <td><b>Total Price</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach var="cart" items="${productList}">
+                    <tr class="product-row">
+                        <td>${cart.product.name}</td>
+
+                    </tr>        
+                </c:forEach>
+            </tbody>
+        </table>
+    <!--
+        <table class="table table-hover table-responsive">
+            <thead>
+                <tr class="font-md">
                     <th>Product Name</th>
                     <th>Qty</th>
                     <th>Unit Price</th>
@@ -36,6 +55,7 @@
                 </tr>
             </tbody>
         </table>
+    -->
     </body>
 </html>
 

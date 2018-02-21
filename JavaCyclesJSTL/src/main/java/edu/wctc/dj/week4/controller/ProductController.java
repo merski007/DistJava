@@ -1,7 +1,5 @@
 package edu.wctc.dj.week4.controller;
 
-import edu.wctc.dj.week4.model.Bike;
-import edu.wctc.dj.week4.model.BikeService;
 import edu.wctc.dj.week4.model.Product;
 import edu.wctc.dj.week4.model.ProductService;
 import java.io.IOException;
@@ -57,8 +55,8 @@ public class ProductController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         ProductService productService = new ProductService();
-        //BikeService bikeService = new BikeService();
         RequestDispatcher dispatcher = null;
         
         String id = request.getParameter("id");
@@ -67,7 +65,6 @@ public class ProductController extends HttpServlet {
         
         if (id != null) {
             Product product = productService.getProduct(id);
-            //Bike bike = bikeService.getBike(id);
             request.setAttribute("product", product);
             dispatcher = request.getRequestDispatcher("/productDetails.jsp");
             // go to productDetail.jsp
@@ -80,7 +77,6 @@ public class ProductController extends HttpServlet {
 //        } 
         else if (type != null) {
             List<Product> productList = productService.getAllLikeProducts(type);
-            //List<Product> productList = productService.getAllProducts();
             request.setAttribute("productList", productList);
             dispatcher = request.getRequestDispatcher("/products.jsp");
         }
