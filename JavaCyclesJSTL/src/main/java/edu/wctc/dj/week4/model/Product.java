@@ -14,7 +14,7 @@ public class Product {
     private double price;
     private String type;
 
-    public Product(String prodId, String brand, String name, String description, String imageName, double price, String Type) {
+    public Product(String prodId, String brand, String name, String description, String imageName, double price, String type) {
         this.prodId = prodId;
         this.brand = brand;
         this.name = name;
@@ -76,5 +76,8 @@ public class Product {
         return type;
     }
 
-    
+    public void setType(String type) {
+        this.type = type;
+    }
+
 }

@@ -80,6 +80,7 @@ public class ProductController extends HttpServlet {
 //        } 
         else if (type != null) {
             List<Product> productList = productService.getAllLikeProducts(type);
+            //List<Product> productList = productService.getAllProducts();
             request.setAttribute("productList", productList);
             dispatcher = request.getRequestDispatcher("/products.jsp");
         }

@@ -31,7 +31,7 @@ public class ProductService {
     }
 
     public List<Product> getAllLikeProducts(String type) {
-        List<Product> tempList = null;
+        List<Product> tempList = new ArrayList<>();
         for (Product prod : productList) {
             if (prod.getType().equals(type)) {
                 tempList.add(prod);
