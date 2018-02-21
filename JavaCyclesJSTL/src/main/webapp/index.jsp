@@ -3,7 +3,7 @@
     Created on : Feb 6, 2018, 6:25:46 PM
     Author     : mjmersenski
 --%>
-
+<jsp:include page="index.html" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +58,7 @@
               <li><a href="#">One more separated link</a></li>
               -->
             </ul>
-            <li><a href="shoppingCart.jsp"><i class="fas fa-shopping-cart"></i> Shopping Cart </a></li>
+            <li><a href="ShoppingCartController"><i class="fas fa-shopping-cart"></i> Shopping Cart </a></li>
           </li>
         </ul>
 

@@ -84,11 +84,12 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach var="bike" items="${bikeList}">
+                
+                <c:forEach var="product" items="${productList}">
                     <tr class="product-row">
-                        <td><a href="BikeController?id=${bike.id}">${bike.manufacturer}</a></td>
-                        <td>${bike.modelName}</td>
-                        <td>${bike.price}</td>
+                        <td><a href="ProductController?id=${product.prodId}">${product.brand}</a></td>
+                        <td>${product.name}</td>
+                        <td>${product.price}</td>
                     </tr>        
                 </c:forEach>
             </tbody>

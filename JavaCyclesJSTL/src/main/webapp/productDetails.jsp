@@ -76,15 +76,15 @@
     </nav>
       
     <!-- body content under the header -->
-    <h2><c:out value="${bike.modelName}" /></h2>
+    <h2><c:out value="${product.name}" /></h2>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <p class="prodDetailDesc"><b>Manufacturer:</b> <c:out value="${bike.manufacturer}" /></p>
-                <p class="prodDetailDesc"><b>Description:</b> <c:out value="${bike.modelDescription}" /></p>
+                <p class="prodDetailDesc"><b>Manufacturer:</b> <c:out value="${product.name}" /></p>
+                <p class="prodDetailDesc"><b>Description:</b> <c:out value="${product.description}" /></p>
             </div>
             <div class="col-md-4">
-                <img src="css/images/<c:out value="${bike.modelImage}" />" alt="<c:out value="${bike.modelName}" />" class="prodDetailImg">
+                <img src="css/images/<c:out value="${product.imageName}" />" alt="<c:out value="${product.name}" />" class="prodDetailImg">
             </div>
         </div>
     </div>
