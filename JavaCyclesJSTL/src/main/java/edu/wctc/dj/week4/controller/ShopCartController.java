@@ -71,7 +71,7 @@ public class ShopCartController extends HttpServlet {
 //        
         if (cart != null) {
             List<LineItem> productList = sc.getLineItemArrayList();
-            request.setAttribute("cart", cart);
+            request.setAttribute("productList", productList);
             dispatcher = request.getRequestDispatcher("/shoppingCart.jsp");
             // go to shoppingCart.jsp
         } 

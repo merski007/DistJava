@@ -24,6 +24,22 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="row">
+                    <button id="addToCart" type="button" class="btn btn-primary">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                //alert("this works");
+                $('#addToCart').click(function () {
+                    alert("I dont do anything yet, but I will eventually...");
+                });
+            });
+        </script>
     </body>
 </html>
 

@@ -5,6 +5,7 @@
 --%>
 <jsp:include page="header.jsp" />
 <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +25,7 @@
                     <tr class="product-row">
                         <td><a href="ProductController?id=${product.prodId}">${product.brand}</a></td>
                         <td>${product.name}</td>
-                        <td>${product.price}</td>
+                        <td><fmt:formatNumber value = "${product.price}" type = "currency" /></td>
                     </tr>        
                 </c:forEach>
             </tbody>

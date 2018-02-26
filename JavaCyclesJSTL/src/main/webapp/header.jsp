@@ -57,7 +57,7 @@ Author     : mjmersenski
                                 <li><a href="#">One more separated link</a></li>
                                 -->
                             </ul>
-                        <li><a href="ShoppingCartController"><i class="fas fa-shopping-cart"></i> Shopping Cart </a></li>
+                        <li><a href="ShopCartController"><i class="fas fa-shopping-cart"></i> Shopping Cart </a></li>
                         </li>
                     </ul>
 

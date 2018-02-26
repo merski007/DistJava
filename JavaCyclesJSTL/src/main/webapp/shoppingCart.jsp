@@ -4,6 +4,8 @@
     Author     : mjmersenski
 --%>
 <jsp:include page="header.jsp" />
+<%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,10 +24,12 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach var="cart" items="${productList}">
+                <c:forEach var="lineItem" items="${productList}">
                     <tr class="product-row">
-                        <td>${cart.product.name}</td>
-
+                        <td>${lineItem.product.name}</td>
+                        <td>${lineItem.qty}</td>
+                        <td><fmt:formatNumber value = "${lineItem.product.price}" type = "currency"/></td>
+                        <td><fmt:formatNumber value = "${lineItem.qty * lineItem.product.price}" type = "currency" /></td>
                     </tr>        
                 </c:forEach>
             </tbody>
