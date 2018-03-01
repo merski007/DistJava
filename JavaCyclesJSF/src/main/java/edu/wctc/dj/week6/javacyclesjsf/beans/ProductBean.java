@@ -21,16 +21,16 @@ public class ProductBean implements Serializable {
 
     public ProductBean() {
     }
-    
-    public String allProducts(){
+
+    public String allProducts() {
         productList = productService.getAllProducts();
         return "productList";
     }
-    
-    public void productDetail(AjaxBehaviorEvent event){
-        try{
+
+    public void productDetail(AjaxBehaviorEvent event) {
+        try {
             FacesContext.getCurrentInstance().getExternalContext().redirect("productDetail.xhtml?id=" + product.getProdId());
-        }catch (IOException ex){
+        } catch (IOException ex) {
             FacesMessage msg = new FacesMessage("IOException", product.getProdId());
             FacesContext.getCurrentInstance().addMessage(null, msg);
         }
@@ -51,7 +51,5 @@ public class ProductBean implements Serializable {
     public void setProductList(List<Product> productList) {
         this.productList = productList;
     }
-    
-    
-    
+
 }
