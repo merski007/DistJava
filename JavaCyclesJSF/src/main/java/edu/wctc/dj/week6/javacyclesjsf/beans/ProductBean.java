@@ -2,41 +2,54 @@ package edu.wctc.dj.week6.javacyclesjsf.beans;
 
 import edu.wctc.dj.week6.javacyclesjsf.model.Product;
 import edu.wctc.dj.week6.javacyclesjsf.model.ProductService;
+import java.io.IOException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.List;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.faces.event.AjaxBehaviorEvent;
 
 @Named(value = "productBean")
 @SessionScoped
 public class ProductBean implements Serializable {
 
-    private final ProductService ps = new ProductService();
-    private Product p;
-    private List<Product> pList;
+    private final ProductService productService = new ProductService();
+    private Product product;
+    private List<Product> productList;
 
     public ProductBean() {
     }
     
     public String allProducts(){
-        pList = ps.getAllProducts();
-        return "pList";
+        productList = productService.getAllProducts();
+        return "productList";
+    }
+    
+    public void productDetail(AjaxBehaviorEvent event){
+        try{
+            FacesContext.getCurrentInstance().getExternalContext().redirect("productDetail.xhtml?id=" + product.getProdId());
+        }catch (IOException ex){
+            FacesMessage msg = new FacesMessage("IOException", product.getProdId());
+            FacesContext.getCurrentInstance().addMessage(null, msg);
+        }
     }
 
-    public Product getP() {
-        return p;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setP(Product p) {
-        this.p = p;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
-    public List<Product> getpList() {
-        return pList;
+    public List<Product> getProductList() {
+        return productList;
     }
 
-    public void setpList(List<Product> pList) {
-        this.pList = pList;
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
     }
     
     
