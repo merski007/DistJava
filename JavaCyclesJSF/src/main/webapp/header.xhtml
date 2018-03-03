@@ -43,9 +43,12 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bicycle"></i> Products <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="ProductController?type=bicycle">Bikes</a></li>
-                                <li><a href="ProductController?type=clothing">Clothing</a></li>
-                                <li><a href="ProductController?type=accessory">Accessories</a></li>
+                                <!--<li><a href="ProductController?type=bicycle">Bikes</a></li>-->
+                                <li><h:link outcome="#{productBean.allLikeProducts('bicycle')}" value="Bikes" /></li>
+                                <!--<li><a href="ProductController?type=clothing">Clothing</a></li>-->
+                                <!--<li><h:link outcome="#{productBean.allLikeProducts('clothing')}" value="Clothing" /></li>-->
+                                <!--<li><a href="ProductController?type=accessory">Accessories</a></li>-->
+                                <!--<li><h:link outcome="#{productBean.allLikeProducts('accessory')}" value="Accessories" /></li>-->
                                 <!--
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Separated link</a></li>

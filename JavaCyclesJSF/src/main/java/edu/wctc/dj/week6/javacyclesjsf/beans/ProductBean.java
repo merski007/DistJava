@@ -26,6 +26,11 @@ public class ProductBean implements Serializable {
         productList = productService.getAllProducts();
         return "productList";
     }
+    
+    public String allLikeProducts(String type){
+        productList = productService.getAllLikeProducts(type);
+        return "productList";
+    }
 
     public void productDetail(AjaxBehaviorEvent event) {
         try {
