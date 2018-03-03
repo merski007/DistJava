@@ -2,21 +2,51 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-        <h:head>
-                <title>Name Detail</title>
-        </h:head>
-        <h:body>
-            <p:panelGrid columns="2">
-                <h:outputLabel value="Brand: " />
-                <h:outputText value="#{productBean.product.brand}" />
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:include src="header.xhtml" />
+    <h:head>
+        <title>Product Detail</title>
+    </h:head>
+    <h:body>
+        <!--<h2><c:out value="${product.name}" /></h2>-->
+        <h2><h:outputText value="#{productBean.product.name}" /></h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <p class="prodDetailDesc"><b>Manufacturer:</b> <h:outputText value="#{productBean.product.brand}" /></p>
+                    <p class="prodDetailDesc"><b>Description:</b> <h:outputText value="#{productBean.product.description}" /></p>
+                </div>
+                <div class="col-md-4">
+                <!--Doesn't work<p:graphicImage value="css/images/#{productBean.product.imageName}" class="prodDetailImg"/>-->
+                    <p:graphicImage value="css/images/#{productBean.product.imageName}" class="prodDetailImg"/> 
+                    <!--what's the difference between 'value' and 'name' when calling image url???-->
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="row">
+                    <p:button id="addToCart" class="btn btn-primary" value="Add to cart"/>
+                    <!--<button id="addToCart" type="button" class="btn btn-primary">Add to cart</button>-->
+                </div>
+            </div>
+        </div>
 
-                <h:outputLabel value="Name:" />
-                <h:outputText value="#{productBean.product.name}" />
 
-                <h:outputLabel value="Price:" />
-                <h:outputText value="#{productBean.product.price}" />
-            </p:panelGrid>
-        </h:body>
+
+
+        <!--        <p:panelGrid columns="2">
+                    <h:outputLabel value="Brand: " />
+                    <h:outputText value="#{productBean.product.brand}" />
+        
+                    <h:outputLabel value="Name:" />
+                    <h:outputText value="#{productBean.product.name}" />
+        
+                    <h:outputLabel value="Price:" />
+                    <h:outputText value="#{productBean.product.price}" />
+                </p:panelGrid>-->
+    </h:body>
 </html>
 

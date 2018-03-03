@@ -10,27 +10,6 @@
         <title>Product List</title>
     </h:head>
     <h:body>
-
-        <!--        <table class="table table-hover table-responsive">
-                    <thead>
-                        <tr class="font-md">
-                            <td><b>Manufacturer</b></td>
-                            <td><b>Model Name</b></td>
-                            <td><b>Price</b></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach var="product" items="${productList}">
-                            <tr class="product-row">
-                                <td><a href="ProductController?id=${product.prodId}">${product.brand}</a></td>
-                                <td>${product.name}</td>
-                                <td><fmt:formatNumber value = "${product.price}" type = "currency" /></td>
-                            </tr>        
-                        </c:forEach>
-                    </tbody>
-                </table>-->
-
-
         <h:form>
             <p:dataTable value="#{productBean.productList}" var="product" rowKey="#{product.prodId}"
                          selection="#{productBean.product}" selectionMode="single">
@@ -47,8 +26,6 @@
                     </h:outputText>
                 </p:column>
             </p:dataTable>
-        </h:form>
-        
-        
+        </h:form>  
     </h:body>
 </html>
