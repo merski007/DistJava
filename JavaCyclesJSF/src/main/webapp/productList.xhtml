@@ -3,23 +3,52 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:include src="header.xhtml" />
     <h:head>
         <title>Product List</title>
     </h:head>
     <h:body>
+
+        <!--        <table class="table table-hover table-responsive">
+                    <thead>
+                        <tr class="font-md">
+                            <td><b>Manufacturer</b></td>
+                            <td><b>Model Name</b></td>
+                            <td><b>Price</b></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach var="product" items="${productList}">
+                            <tr class="product-row">
+                                <td><a href="ProductController?id=${product.prodId}">${product.brand}</a></td>
+                                <td>${product.name}</td>
+                                <td><fmt:formatNumber value = "${product.price}" type = "currency" /></td>
+                            </tr>        
+                        </c:forEach>
+                    </tbody>
+                </table>-->
+
+
         <h:form>
             <p:dataTable value="#{productBean.productList}" var="product" rowKey="#{product.prodId}"
                          selection="#{productBean.product}" selectionMode="single">
                 <f:ajax event="rowSelect" listener="#{productBean.productDetail}" />
-                <p:column>
+                <p:column headerText="Manufacturer">
                     <h:outputText value="#{product.brand}" />
                 </p:column>
-                <p:column>
+                <p:column headerText="Product Name">
                     <h:outputText value="#{product.name}" />
+                </p:column>
+                <p:column headerText="Price">
+                    <h:outputText value="#{product.price}">
+                        <f:convertNumber type="currency" />
+                    </h:outputText>
                 </p:column>
             </p:dataTable>
         </h:form>
+        
+        
     </h:body>
-
 </html>
