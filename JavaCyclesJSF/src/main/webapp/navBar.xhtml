@@ -24,9 +24,9 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bicycle"></i> Products <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <!--<li><a href="ProductController?type=bicycle">Bikes</a></li>-->
-                            
-                            <!-- when this link is added to the site, the other h:link to all products breaks. -->
+                            <li><h:form><h:commandLink action="#{productBean.allLikeProducts('bicycle')}" value="Bikes" /></h:form></li>
+                            <li><h:form><h:commandLink action="#{productBean.allLikeProducts('clothing')}" value="Clothing" /></h:form></li>
+                            <li><h:form><h:commandLink action="#{productBean.allLikeProducts('accessory')}" value="Accessories" /></h:form></li>
                             <!--
                             <li role="separator" class="divider"></li>
                             <li><a href="#">Separated link</a></li>
