@@ -13,7 +13,7 @@
         <ui:include src="navBar.xhtml" />
 
         <h:form>
-            <p:dataTable value="#{productBean.productList}" var="product" rowKey="#{product.prodId}"
+            <p:dataTable value="#{productBean.prodList}" var="product" rowKey="#{product.prodId}"
                          selection="#{productBean.product}" selectionMode="single">
                 <f:ajax event="rowSelect" listener="#{productBean.productDetail}" />
                 <p:column headerText="Manufacturer">

@@ -17,18 +17,18 @@ public class ProductBean implements Serializable {
 
     private final ProductService productService = new ProductService();
     private Product product;
-    private List<Product> productList;
+    private List<Product> prodList;
 
     public ProductBean() {
     }
 
     public String allProducts() {
-        productList = productService.getAllProducts();
+        prodList = productService.getAllProducts();
         return "productList";
     }
     
     public String allLikeProducts(String type){
-        productList = productService.getAllLikeProducts(type);
+        prodList = productService.getAllLikeProducts(type);
         return "productList";
     }
 
@@ -49,12 +49,12 @@ public class ProductBean implements Serializable {
         this.product = product;
     }
 
-    public List<Product> getProductList() {
-        return productList;
+    public List<Product> getProdList() {
+        return prodList;
     }
 
-    public void setProductList(List<Product> productList) {
-        this.productList = productList;
+    public void setProdList(List<Product> prodList) {
+        this.prodList = prodList;
     }
 
 }

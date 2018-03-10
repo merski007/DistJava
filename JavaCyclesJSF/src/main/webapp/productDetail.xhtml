@@ -20,34 +20,20 @@
                     <p class="prodDetailDesc"><b>Description:</b> <h:outputText value="#{productBean.product.description}" /></p>
                 </div>
                 <div class="col-md-4">
-                <!--Doesn't work<p:graphicImage value="css/images/#{productBean.product.imageName}" class="prodDetailImg"/>-->
                     <p:graphicImage value="css/images/#{productBean.product.imageName}" class="prodDetailImg"/> 
-                    <!--what's the difference between 'value' and 'name' when calling image url???-->
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="row">
-                    <p:button id="addToCart" class="btn btn-primary" value="Add to cart"/>
-                    <!--<button id="addToCart" type="button" class="btn btn-primary">Add to cart</button>-->
+                    <h:form>
+                    <!--<p:button binding="#{shoppingCartBean.addLineItem('1',1)}" id="addToCart" class="btn btn-primary" value="Add to cart"/>-->
+                    <h:commandButton value="add to cart" action="#{shoppingCartBean.addLineItem('1',1)}" />
+                    </h:form>
                 </div>
             </div>
         </div>
-
-
-
-
-        <!--        <p:panelGrid columns="2">
-                    <h:outputLabel value="Brand: " />
-                    <h:outputText value="#{productBean.product.brand}" />
-        
-                    <h:outputLabel value="Name:" />
-                    <h:outputText value="#{productBean.product.name}" />
-        
-                    <h:outputLabel value="Price:" />
-                    <h:outputText value="#{productBean.product.price}" />
-                </p:panelGrid>-->
     </h:body>
 </html>
 

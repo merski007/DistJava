@@ -13,22 +13,25 @@
         <ui:include src="navBar.xhtml" />
 
         <h:form>
-            <p:dataTable value="#{productBean.productList}" var="product" rowKey="#{product.prodId}"
-                         selection="#{productBean.product}" selectionMode="single">
-                <f:ajax event="rowSelect" listener="#{productBean.productDetail}" />
+            <p:dataTable value="#{shoppingCartBean.lineItemList}" var="lineItem" rowKey="#{lineItem.product.prodId}"
+                         selection="#{shoppingCartBean.lineItem}" selectionMode="single">
                 <p:column headerText="Manufacturer">
-                    <h:outputText value="#{product.brand}" />
+                    <h:outputText value="#{lineItem.product.brand}" />
                 </p:column>
                 <p:column headerText="Product Name">
-                    <h:outputText value="#{product.name}" />
+                    <h:outputText value="#{lineItem.product.name}" />
+                </p:column>
+                <p:column headerText="Product Name">
+                    <h:outputText value="#{lineItem.qty}" />
                 </p:column>
                 <p:column headerText="Price">
-                    <h:outputText value="#{product.price}">
+                    <h:outputText value="#{lineItem.product.price}">
                         <f:convertNumber type="currency" />
                     </h:outputText>
                 </p:column>
             </p:dataTable>
         </h:form>  
+        
     </h:body>
 </html>
 
