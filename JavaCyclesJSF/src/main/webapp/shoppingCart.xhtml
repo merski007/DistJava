@@ -13,19 +13,15 @@
         <ui:include src="navBar.xhtml" />
 
         <h:form>
-            <p:dataTable value="#{shoppingCartBean.lineItemList}" var="lineItem" rowKey="#{lineItem.product.prodId}"
-                         selection="#{shoppingCartBean.lineItem}" selectionMode="single">
+            <p:dataTable value="#{cartBean.shoppingCart}" var="prod" rowKey="#{prod.prodId}">
                 <p:column headerText="Manufacturer">
-                    <h:outputText value="#{lineItem.product.brand}" />
+                    <h:outputText value="#{prod.brand}" />
                 </p:column>
                 <p:column headerText="Product Name">
-                    <h:outputText value="#{lineItem.product.name}" />
-                </p:column>
-                <p:column headerText="Product Name">
-                    <h:outputText value="#{lineItem.qty}" />
+                    <h:outputText value="#{prod.name}" />
                 </p:column>
                 <p:column headerText="Price">
-                    <h:outputText value="#{lineItem.product.price}">
+                    <h:outputText value="#{prod.price}">
                         <f:convertNumber type="currency" />
                     </h:outputText>
                 </p:column>
