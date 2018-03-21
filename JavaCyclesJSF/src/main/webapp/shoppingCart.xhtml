@@ -13,7 +13,7 @@
         <ui:include src="navBar.xhtml" />
 
         <h:form>
-            <p:dataTable value="#{cartBean.shoppingCart}" var="prod" rowKey="#{prod.prodId}">
+            <p:dataTable value="#{cartBean.productList}" var="prod" rowKey="#{prod.prodId}">
                 <p:column headerText="Manufacturer">
                     <h:outputText value="#{prod.brand}" />
                 </p:column>

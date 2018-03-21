@@ -16,7 +16,7 @@ public class CartBean implements Serializable {
     private final String sessionId;
     private final ShoppingCart cart;
     private final ShoppingCartService cartService = new ShoppingCartService();
-    private List<Product> shoppingCart;
+    private List<Product> productList;
 
     public CartBean() {
         FacesContext facesContext = FacesContext.getCurrentInstance();
@@ -30,21 +30,22 @@ public class CartBean implements Serializable {
     }
 
     public String getContents() {
-        shoppingCart = cart.getContents();
-        //shoppingCart = (List<Product>) cartService.getContents(sessionId);
+        productList = cart.getContents();
+        //productList = (List<Product>) cartService.getContents(sessionId);
         return "shoppingCart";
     }
 
-    public List<Product> getShoppingCart() {
-        return shoppingCart;
+    public List<Product> getProductList() {
+        return productList;
     }
 
-    public void setShoppingCart(List<Product> shoppingCart) {
-        this.shoppingCart = shoppingCart;
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
     }
 
     public void addToCart(Product prod) {
         cart.add(prod);
         cartService.update(sessionId, cart);
     }
+
 }

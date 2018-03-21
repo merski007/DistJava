@@ -12,6 +12,11 @@
     <h:body>
         <ui:include src="navBar.xhtml" />
 
+        <h:form id="form">
+            <p:outputLabel for="cartQuantity" value="Cart: " />
+            <h:outputText id="cartQuantity" value="#{cartBean.itemsInCart}" />
+        </h:form>
+
         <h:form>
             <p:dataTable value="#{productBean.prodList}" var="product" rowKey="#{product.prodId}"
                          selection="#{productBean.product}" selectionMode="single">
@@ -26,6 +31,11 @@
                     <h:outputText value="#{product.price}">
                         <f:convertNumber type="currency" />
                     </h:outputText>
+                </p:column>
+                <p:column>
+                        <p:commandButton value="Add to cart" 
+                                         update=":form:cartQuantity" 
+                                         actionListener="#{cartBean.addToCart(product)}" />
                 </p:column>
             </p:dataTable>
         </h:form>  
