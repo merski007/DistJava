@@ -31,6 +31,7 @@ public class CartBean implements Serializable {
 
     public String getContents() {
         shoppingCart = cart.getContents();
+        //shoppingCart = (List<Product>) cartService.getContents(sessionId);
         return "shoppingCart";
     }
 
