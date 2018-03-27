@@ -1,4 +1,4 @@
-package edu.wctc.dj.week6.javacyclesjsf.model;
+package edu.wctc.dj.week9.javacyclesjsf.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;

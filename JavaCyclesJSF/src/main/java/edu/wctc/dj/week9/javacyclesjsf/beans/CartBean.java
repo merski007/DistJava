@@ -1,8 +1,8 @@
-package edu.wctc.dj.week6.javacyclesjsf.beans;
+package edu.wctc.dj.week9.javacyclesjsf.beans;
 
-import edu.wctc.dj.week6.javacyclesjsf.model.Product;
-import edu.wctc.dj.week6.javacyclesjsf.model.ShoppingCart;
-import edu.wctc.dj.week6.javacyclesjsf.model.ShoppingCartService;
+import edu.wctc.dj.week9.javacyclesjsf.model.Product;
+import edu.wctc.dj.week9.javacyclesjsf.model.ShoppingCart;
+import edu.wctc.dj.week9.javacyclesjsf.model.ShoppingCartService;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
