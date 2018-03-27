@@ -29,7 +29,7 @@
                     <h:form>
                         <p:commandButton value="Add" 
                                          update=":form:cartQuantity" 
-                                         actionListener="#{cartBean.addToCart(product)}" />
+                                         actionListener="#{cartBean.addToCart(productBean.product)}" />
                     </h:form>
                 </div>
                 <div class="row">
