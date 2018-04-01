@@ -22,12 +22,12 @@ public class ProductBean implements Serializable {
     public ProductBean() {
     }
 
-    public String allProducts() {
+    public String allProducts() throws Exception {
         prodList = productService.getAllProducts();
         return "productList";
     }
-    
-    public String allLikeProducts(String type){
+
+    public String allLikeProducts(String type) throws Exception {
         prodList = productService.getAllLikeProducts(type);
         return "productList";
     }
