@@ -12,3 +12,9 @@ os.arch=x86_64
 os.version=10.12.6
 derby.system.home=/Users/mjmersenski/Google Drive/School/152-198 - Distributed Java/projects/DistJava/JavaCyclesJSF
 Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Apr 01 09:31:53 CDT 2018: Shutting down Derby engine
+----------------------------------------------------------------
+Sun Apr 01 09:31:53 CDT 2018:
+Shutting down instance a816c00e-0162-7c77-75d4-000069cdd670 on database directory /Users/mjmersenski/Google Drive/School/152-198 - Distributed Java/projects/DistJava/JavaCyclesJSF/javaCycles with class loader sun.misc.Launcher$AppClassLoader@5a07e868 
+----------------------------------------------------------------
