@@ -1,10 +1,28 @@
 package edu.wctc.dj.week10.namesapp10.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Name {
 
+    @Id
+    @GeneratedValue
     private String id;
+
+    @Column(name = "firstName")
     private String first;
+
+    @Column(name = "lastName")
     private String last;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "addressId")
     private Address address;
 
     public Name(String id, String first, String last, Address address) {
@@ -12,6 +30,9 @@ public class Name {
         this.first = first;
         this.last = last;
         this.address = address;
+    }
+
+    public Name() {
     }
 
     public Address getAddress() {

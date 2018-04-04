@@ -2,7 +2,7 @@ package edu.wctc.dj.week10.namesapp10.beans;
 
 import edu.wctc.dj.week10.namesapp10.model.Name;
 import edu.wctc.dj.week10.namesapp10.model.ShoppingCart;
-import edu.wctc.dj.week10.namesapp10.model.ShoppingCartService;
+import edu.wctc.dj.week10.namesapp10.service.ShoppingCartService;
 import java.io.Serializable;
 import javax.faces.context.FacesContext;
 import org.springframework.context.annotation.Scope;

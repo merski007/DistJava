@@ -1,11 +1,24 @@
 package edu.wctc.dj.week10.namesapp10.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Address {
+    @Id
+    @GeneratedValue
+    private String id;
+    
     private String street;
     private String city;
     private String state;
     private String zip;
 
+    public Address() {
+    }
+
+    
     public Address(String street, String city, String state, String zip) {
         this.street = street;
         this.city = city;
