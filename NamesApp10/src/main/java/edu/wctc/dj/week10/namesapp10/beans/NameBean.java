@@ -1,18 +1,18 @@
-package edu.wctc.dj.week9.namesapp9.beans;
+package edu.wctc.dj.week10.namesapp10.beans;
 
-import edu.wctc.dj.week9.namesapp9.model.Name;
-import edu.wctc.dj.week9.namesapp9.model.NameService;
+import edu.wctc.dj.week10.namesapp10.model.Name;
+import edu.wctc.dj.week10.namesapp10.model.NameService;
 import java.io.IOException;
-import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-@Named(value = "nameBean")
-@SessionScoped
+@Component("nameBean")
+@Scope("session")
 public class NameBean implements Serializable {
 
     private final NameService nameService = new NameService();

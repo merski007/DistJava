@@ -1,7 +1,7 @@
-package edu.wctc.dj.week9.namesapp9.data;
+package edu.wctc.dj.week10.namesapp10.data;
 
-import edu.wctc.dj.week9.namesapp9.model.Address;
-import edu.wctc.dj.week9.namesapp9.model.Name;
+import edu.wctc.dj.week10.namesapp10.model.Address;
+import edu.wctc.dj.week10.namesapp10.model.Name;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

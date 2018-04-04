@@ -1,7 +1,7 @@
-package edu.wctc.dj.week9.namesapp9.model;
+package edu.wctc.dj.week10.namesapp10.model;
 
-import edu.wctc.dj.week9.namesapp9.data.AddressDAO;
-import edu.wctc.dj.week9.namesapp9.data.NameDAO;
+import edu.wctc.dj.week10.namesapp10.data.AddressDAO;
+import edu.wctc.dj.week10.namesapp10.data.NameDAO;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

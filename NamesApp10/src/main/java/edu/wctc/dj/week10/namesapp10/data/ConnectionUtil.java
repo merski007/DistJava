@@ -1,4 +1,4 @@
-package edu.wctc.dj.week9.namesapp9.data;
+package edu.wctc.dj.week10.namesapp10.data;
 
 import java.sql.Connection;
 import javax.naming.Context;
