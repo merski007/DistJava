@@ -1,20 +1,2 @@
-Sat Mar 31 09:30:26 CDT 2018 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
-----------------------------------------------------------------
-Sat Mar 31 10:00:57 CDT 2018:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0162-7c77-75d4-000069cdd670 
-on database directory /Users/mjmersenski/Google Drive/School/152-198 - Distributed Java/projects/DistJava/JavaCyclesJSF/javaCycles with class loader sun.misc.Launcher$AppClassLoader@5a07e868 
-Loaded from file:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/db/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-b11
-user.dir=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/db
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.12.6
-derby.system.home=/Users/mjmersenski/Google Drive/School/152-198 - Distributed Java/projects/DistJava/JavaCyclesJSF
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Sun Apr 01 09:31:53 CDT 2018: Shutting down Derby engine
-----------------------------------------------------------------
-Sun Apr 01 09:31:53 CDT 2018:
-Shutting down instance a816c00e-0162-7c77-75d4-000069cdd670 on database directory /Users/mjmersenski/Google Drive/School/152-198 - Distributed Java/projects/DistJava/JavaCyclesJSF/javaCycles with class loader sun.misc.Launcher$AppClassLoader@5a07e868 
-----------------------------------------------------------------
+Tue Apr 03 20:11:22 CDT 2018 : Could not listen on port 1527 on host localhost:
+ java.net.BindException: Address already in use (Bind failed)
