@@ -1,20 +1,7 @@
-Fri Apr 06 07:42:02 CDT 2018 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
+Fri Apr 06 11:48:06 CDT 2018 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Fri Apr 06 07:42:20 CDT 2018:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0162-9afa-606f-000069cdd670 
-on database directory /Users/mjmersenski/Google Drive/School/152-198 - Distributed Java/projects/DistJava/JavaCyclesJSF/names with class loader sun.misc.Launcher$AppClassLoader@5a07e868 
-Loaded from file:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/db/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-b11
-user.dir=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/db
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.12.6
-derby.system.home=/Users/mjmersenski/Google Drive/School/152-198 - Distributed Java/projects/DistJava/JavaCyclesJSF
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Fri Apr 06 07:42:24 CDT 2018:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance 08264012-0162-9afa-606f-000069cdd670 
+Fri Apr 06 11:48:18 CDT 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0162-9bdb-a622-000069cdd670 
 on database directory /Users/mjmersenski/Google Drive/School/152-198 - Distributed Java/projects/DistJava/JavaCyclesJSF/javaCycles with class loader sun.misc.Launcher$AppClassLoader@5a07e868 
 Loaded from file:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/db/lib/derby.jar
 java.vendor=Oracle Corporation

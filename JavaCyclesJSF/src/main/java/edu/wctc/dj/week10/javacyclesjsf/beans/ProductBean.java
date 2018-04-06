@@ -8,6 +8,7 @@ import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -15,7 +16,8 @@ import org.springframework.stereotype.Component;
 @Scope("session")
 public class ProductBean implements Serializable {
 
-    private final ProductService productService = new ProductService();
+    @Autowired
+    private ProductService productService;
     private Product product;
     private List<Product> prodList;
 

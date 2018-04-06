@@ -11,13 +11,16 @@ public class Product {
     @Id
     @GeneratedValue
     private String prodId;
-    
+
     private String brand;
     private String name;
     private String description;
     private String imageName;
     private double price;
     private String type;
+
+    public Product() {
+    }
 
     public Product(String prodId, String brand, String name, String description, String imageName, double price, String type) {
         this.prodId = prodId;

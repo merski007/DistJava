@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,7 +19,7 @@ public class ProductService {
 
     public Product getProduct(String prodId) {
         // TODO
-        return null;
+        return productDao.findOne(prodId);
     }
 
     public List<Product> getAllProducts() throws Exception {
@@ -27,7 +28,7 @@ public class ProductService {
     }
 
     public List<Product> getAllLikeProducts(String type) throws Exception {
-        // TODO
+        // TODO, starts areound 1:50:55 mark in the video
         return null;
     }
 
