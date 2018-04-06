@@ -1,12 +1,17 @@
 package edu.wctc.dj.week10.javacyclesjsf.model;
 
-/**
- *
- * @author mjmersenski
- */
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Product {
 
+    @Id
+    @GeneratedValue
     private String prodId;
+    
     private String brand;
     private String name;
     private String description;

@@ -3,14 +3,14 @@ package edu.wctc.dj.week10.javacyclesjsf.beans;
 import edu.wctc.dj.week10.javacyclesjsf.model.Product;
 import edu.wctc.dj.week10.javacyclesjsf.model.ShoppingCart;
 import edu.wctc.dj.week10.javacyclesjsf.service.ShoppingCartService;
-import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.List;
 import javax.faces.context.FacesContext;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-@Named(value = "cartBean")
-@SessionScoped
+@Component("cartBean")
+@Scope("session")
 public class CartBean implements Serializable {
 
     private final String sessionId;
