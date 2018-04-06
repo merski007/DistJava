@@ -1,5 +1,6 @@
-package edu.wctc.dj.week9.javacyclesjsf.model;
+package edu.wctc.dj.week9.javacyclesjsf.service;
 
+import edu.wctc.dj.week9.javacyclesjsf.model.ShoppingCart;
 import java.util.HashMap;
 import java.util.Map;
 
