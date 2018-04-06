@@ -1,4 +1,4 @@
-package edu.wctc.dj.week9.javacyclesjsf.model;
+package edu.wctc.dj.week10.javacyclesjsf.model;
 
 /**
  *

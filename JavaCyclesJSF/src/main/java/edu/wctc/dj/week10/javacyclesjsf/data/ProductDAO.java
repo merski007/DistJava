@@ -1,7 +1,7 @@
-package edu.wctc.dj.week9.javacyclesjsf.data;
+package edu.wctc.dj.week10.javacyclesjsf.data;
 
 //import edu.wctc.dj.week9.namesapp9.model.Name;
-import edu.wctc.dj.week9.javacyclesjsf.model.Product;
+import edu.wctc.dj.week10.javacyclesjsf.model.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

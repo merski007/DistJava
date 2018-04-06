@@ -1,7 +1,7 @@
-package edu.wctc.dj.week9.javacyclesjsf.service;
+package edu.wctc.dj.week10.javacyclesjsf.service;
 
-import edu.wctc.dj.week9.javacyclesjsf.data.ProductDAO;
-import edu.wctc.dj.week9.javacyclesjsf.model.Product;
+import edu.wctc.dj.week10.javacyclesjsf.data.ProductDAO;
+import edu.wctc.dj.week10.javacyclesjsf.model.Product;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package edu.wctc.dj.week9.javacyclesjsf.data;
+package edu.wctc.dj.week10.javacyclesjsf.data;
 
 import java.sql.Connection;
 import javax.naming.Context;
