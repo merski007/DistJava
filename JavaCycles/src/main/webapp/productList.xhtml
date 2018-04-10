@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <ui:include src="head.xhtml" />
+        <title>Product List</title>
+    </h:head>
+    <h:body>
+        <ui:include src="navBar.xhtml" />
+
+        <h:form id="form">
+            <p:outputLabel for="cartQuantity" value="Cart: " />
+            <h:outputText id="cartQuantity" value="#{cartBean.itemsInCart}" />
+        </h:form>
+
+        <h:form>
+            <p:dataTable value="#{productBean.prodList}" var="product" rowKey="#{product.prodId}"
+                         selection="#{productBean.product}" selectionMode="single">
+                <f:ajax event="rowSelect" listener="#{productBean.productDetail}" />
+                <p:column headerText="Manufacturer">
+                    <h:outputText value="#{product.brand}" />
+                </p:column>
+                <p:column headerText="Product Name">
+                    <h:outputText value="#{product.name}" />
+                </p:column>
+                <p:column headerText="Price">
+                    <h:outputText value="#{product.price}">
+                        <f:convertNumber type="currency" />
+                    </h:outputText>
+                </p:column>
+                <p:column>
+                        <p:commandButton value="Add to cart" 
+                                         update=":form:cartQuantity" 
+                                         actionListener="#{cartBean.addToCart(product)}" />
+                </p:column>
+            </p:dataTable>
+        </h:form>  
+    </h:body>
+</html>
