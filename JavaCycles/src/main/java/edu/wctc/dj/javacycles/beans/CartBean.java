@@ -5,6 +5,7 @@ import edu.wctc.dj.javacycles.model.ShoppingCart;
 import edu.wctc.dj.javacycles.service.ShoppingCartService;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import javax.faces.context.FacesContext;
 import org.springframework.context.annotation.Scope;
@@ -17,7 +18,8 @@ public class CartBean implements Serializable {
     private final String sessionId;
     private final ShoppingCart cart;
     private final ShoppingCartService cartService = new ShoppingCartService();
-    private List<Product> productList;
+    //private List<Product> productList;
+    private Map productList;
 
     public CartBean() {
         FacesContext facesContext = FacesContext.getCurrentInstance();
@@ -44,11 +46,19 @@ public class CartBean implements Serializable {
     }
 */
 
-    public List<Product> getProductList() {
+//    public List<Product> getProductList() {
+//        return productList;
+//    }
+    
+    public Map getProductList() {
         return productList;
     }
 
-    public void setProductList(List<Product> productList) {
+//    public void setProductList(List<Product> productList) {
+//        this.productList = productList;
+//    }
+    
+    public void setProductList(Map productList) {
         this.productList = productList;
     }
 
