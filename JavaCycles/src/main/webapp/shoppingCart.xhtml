@@ -20,14 +20,23 @@
                 <p:column headerText="Product Name">
                     <h:outputText value="#{prod.name}" />
                 </p:column>
+
                 <p:column headerText="Price">
                     <h:outputText value="#{prod.price}">
                         <f:convertNumber type="currency" />
                     </h:outputText>
                 </p:column>
+                <p:column headerText="">
+                    <p:commandButton value="Remove Item" 
+                                     actionListener="#{cartBean.removeProduct(prod)}" />
+                </p:column>
             </p:dataTable>
+            <p:column>
+                <p:commandButton value="Clear Cart" 
+                                 actionListener="#{cartBean.clearCart()}" />
+            </p:column>
         </h:form>  
-        
+
     </h:body>
 </html>
 

@@ -5,6 +5,7 @@ import edu.wctc.dj.javacycles.model.ShoppingCart;
 import edu.wctc.dj.javacycles.service.ShoppingCartService;
 import java.io.Serializable;
 import java.util.List;
+import java.util.stream.Collectors;
 import javax.faces.context.FacesContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -29,11 +30,19 @@ public class CartBean implements Serializable {
         return cart.getItemsInCart();
     }
 
+    
     public String getContents() {
         productList = cart.getContents();
         //productList = (List<Product>) cartService.getContents(sessionId);
         return "shoppingCart";
     }
+
+    /*
+    public String getContents() {
+        productList = cart.getContents().stream().distinct().collect(Collectors.toList());
+        return "shoppingCart";
+    }
+*/
 
     public List<Product> getProductList() {
         return productList;
@@ -47,5 +56,14 @@ public class CartBean implements Serializable {
         cart.add(prod);
         cartService.update(sessionId, cart);
     }
-
+    
+    public void clearCart(){
+        cart.removeAll();
+        cartService.update(sessionId, cart);
+    }
+    
+    public void removeProduct(Product prod){
+        cart.remove(prod);
+        cartService.update(sessionId, cart);
+    }
 }

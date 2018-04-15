@@ -6,6 +6,14 @@ import java.util.List;
 
 public class ShoppingCart implements Serializable {
     private List<Product> contents = new ArrayList<>();
+    
+    /**
+     * what i'd like to is store a map with <product,qty> and
+     * then look to see if the product already exists, 
+     * if yes, then i can up the qty,
+     * if no, then i can add the product to the map
+     * @return 
+     */
 
     public List<Product> getContents() {
         return contents;
