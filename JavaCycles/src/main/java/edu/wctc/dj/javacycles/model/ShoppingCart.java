@@ -3,6 +3,7 @@ package edu.wctc.dj.javacycles.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,9 +20,19 @@ public class ShoppingCart implements Serializable {
      * @return
      */
     //Map section
-    public Map getContents() {
-        return contents;
+//    public Map getContents() {
+//        return contents;
+//    }
+    
+    public List<Product> getContents(){
+        List<Product> keys = new ArrayList<>(contents.keySet());
+        return keys;
     }
+    
+    public int getQty(Product prod){
+        return contents.get(prod);
+    }
+    
 
     public void setContents(Map contents) {
         this.contents = contents;
@@ -32,12 +43,13 @@ public class ShoppingCart implements Serializable {
     }
 
     public void add(Product prod) {
-        if (contents.isEmpty()) {
+        if (!contents.containsKey(prod)) {
             contents.put(prod, 1);
         } 
         else if (contents.containsKey(prod)) {
             contents.put(prod, contents.get(prod) + 1);
         }
+        
 
         //contents.add(prod);
     }
