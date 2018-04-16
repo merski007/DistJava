@@ -39,7 +39,13 @@ public class ShoppingCart implements Serializable {
     }
 
     public int getItemsInCart() {
-        return contents.size();
+        int temp = 0;
+        for(int x : contents.values()){
+            temp += x;
+        }
+        
+        //return contents.size();
+        return temp;
     }
 
     public void add(Product prod) {
