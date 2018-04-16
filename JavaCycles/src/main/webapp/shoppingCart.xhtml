@@ -23,8 +23,13 @@
                 <p:column headerText="Qty">
                     <h:outputText value="#{cartBean.getQty(prod)}" />
                 </p:column>
-                <p:column headerText="Price">
-                    <h:outputText value="#{cartBean.getTotalPrice(prod)}">
+                <p:column headerText="Unit Price">
+                    <h:outputText value="#{prod.price}">
+                        <f:convertNumber type="currency" />
+                    </h:outputText>
+                </p:column>
+                <p:column headerText="Total Price">
+                    <h:outputText value="#{cartBean.getProdSubtotal(prod)}">
                         <f:convertNumber type="currency" />
                     </h:outputText>
                 </p:column>

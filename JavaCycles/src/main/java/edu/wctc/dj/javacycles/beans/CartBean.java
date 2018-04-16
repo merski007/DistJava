@@ -43,26 +43,48 @@ public class CartBean implements Serializable {
         return cart.getQty(prod);
     }
     
-    public double getTotalPrice(Product prod){
-        double tempTotal;
-        double tempPrice = prod.getPrice();
-        double tempQty = (double) cart.getQty(prod);
+//    public double getTotalPrice(Product prod){
+//        double tempTotal;
+//        double tempPrice = prod.getPrice();
+//        double tempQty = (double) cart.getQty(prod);
+//        
+//        tempTotal = tempPrice * tempQty;
+//        
+//        addToCartTotal(tempTotal);
+//        
+//        return tempTotal;
+//    }
+    
+    public double getProdSubtotal (Product prod){
+        double subtotal;
+        double price = prod.getPrice();
+        double qty = (double) cart.getQty(prod);
         
-        tempTotal = tempPrice * tempQty;
+        subtotal = price * qty;
         
-        keepRunningTotal(tempTotal);
-        
-        return tempTotal;
+        return subtotal;
+    }    
+    private void addToCartTotal(Product prod){
+        double subtotal = prod.getPrice();
+        double temp = cartTotal + subtotal;
+        setCartTotal(temp);
     }
     
-    private void keepRunningTotal(double price){
-        // add total price to running cart total
-        cartTotal += price;
+    private void substractFromCartTotal(Product prod){
+        double subtotal = getProdSubtotal(prod);
+        double temp = cartTotal - subtotal;
+        setCartTotal(temp);
     }
 
     public double getCartTotal() {
         return cartTotal;
     }
+
+    public void setCartTotal(double cartTotal) {
+        this.cartTotal = cartTotal;
+    }
+    
+    
     
     
 
@@ -88,15 +110,18 @@ public class CartBean implements Serializable {
 //    }
     public void addToCart(Product prod) {
         cart.add(prod);
+        addToCartTotal(prod);
         cartService.update(sessionId, cart);
     }
     
     public void clearCart() {
         cart.removeAll();
+        setCartTotal(0.0);
         cartService.update(sessionId, cart);
     }
     
     public void removeProduct(Product prod) {
+        substractFromCartTotal(prod);
         cart.remove(prod);
         cartService.update(sessionId, cart);
     }
