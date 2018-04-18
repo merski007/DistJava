@@ -36,7 +36,8 @@ public class ShoppingCart implements Serializable {
     public void add(Product prod) {
         if (!contents.containsKey(prod)) {
             contents.put(prod, 1);
-        } else if (contents.containsKey(prod)) {
+        } 
+        else{
             contents.put(prod, contents.get(prod) + 1);
         }
     }
