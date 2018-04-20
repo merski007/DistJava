@@ -38,7 +38,10 @@
                                      actionListener="#{cartBean.removeProduct(prod)}" />
                 </p:column>
                 <f:facet name="footer">
-                    order sub-total: #{cartBean.cartTotal}
+                    order sub-total:
+                    <h:outputText value="#{cartBean.cartTotal}">
+                        <f:convertNumber type="currency" />
+                    </h:outputText>
                 </f:facet>
             </p:dataTable>
             <p:column>
