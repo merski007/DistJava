@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <ui:include src="head.xhtml" />
+        <title>Java Cycles</title>
+    </h:head>
+    <h:body>
+        <ui:include src="navBar.xhtml" />
+
+        <div class="jumbotron">
+            <h1>Java Cycles w/ Spring</h1>
+            <p class="lead">Java Cycles is the leading authority on new and fresh cycling trends.</p>
+            <p:button outcome="#{productBean.allProducts()}" class="btn btn-primary" value="Go to product list" />
+        </div>
+
+<!--        <script>
+            $(document).ready(function () {
+                //alert("this works");
+                $('#learnMore').click(function () {
+                    alert("You clicked this button, you're awesome!!!");
+                });
+            });
+        </script>-->
+    </h:body>
+</html>
+
