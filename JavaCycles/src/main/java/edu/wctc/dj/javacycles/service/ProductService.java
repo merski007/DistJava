@@ -29,7 +29,13 @@ public class ProductService {
 
     public List<Product> getAllLikeProducts(String type) throws Exception {
         // TODO, starts areound 1:50:55 mark in the video
-        return null;
+        //ExampleMatcher matcher = ExampleMatcher.matching().withMatcher(type, startsWith().ignoreCase());
+//        ExampleMatcher matcher = ExampleMatcher.matching().withMatcher("type", startsWith().ignoreCase());
+//
+//        Product product = new Product();
+//        product.setType(type);
+//        return productDao.findAll(Example.of(product, matcher));
+        return productDao.findByType(type);
     }
 
 }
