@@ -20,14 +20,33 @@
                 <p:column headerText="Product Name">
                     <h:outputText value="#{prod.name}" />
                 </p:column>
-                <p:column headerText="Price">
+                <p:column headerText="Qty">
+                    <h:outputText value="#{cartBean.getQty(prod)}" />
+                </p:column>
+                <p:column headerText="Unit Price">
                     <h:outputText value="#{prod.price}">
                         <f:convertNumber type="currency" />
                     </h:outputText>
                 </p:column>
+                <p:column headerText="Total Price">
+                    <h:outputText value="#{cartBean.getProdSubtotal(prod)}">
+                        <f:convertNumber type="currency" />
+                    </h:outputText>
+                </p:column>
+                <p:column headerText="">
+                    <p:commandButton value="Remove Item" 
+                                     actionListener="#{cartBean.removeProduct(prod)}" />
+                </p:column>
+                <f:facet name="footer">
+                    order sub-total: $#{cartBean.cartTotal}
+                </f:facet>
             </p:dataTable>
+            <p:column>
+                <p:commandButton value="Clear Cart" 
+                                 actionListener="#{cartBean.clearCart()}" />
+            </p:column>
         </h:form>  
-        
+
     </h:body>
 </html>
 
