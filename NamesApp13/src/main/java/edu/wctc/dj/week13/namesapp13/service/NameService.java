@@ -14,27 +14,35 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class NameService {
 
-	@Autowired
-	private INameDAO nameDao;
+    @Autowired
+    private INameDAO nameDao;
 
-	public Name getName(String id) {
-		return nameDao.getOne(id);
-	}
+    public Name getName(String id) {
+        return nameDao.getOne(id);
+    }
 
-	public List<Name> getAllNames() throws Exception {
-		return nameDao.findAll();
-	}
+    public List<Name> getAllNames() throws Exception {
+        return nameDao.findAll();
+    }
 
-	public List<Name> findNames(String search) {
-		ExampleMatcher matcher = ExampleMatcher.matching()
-			.withMatcher("last", startsWith().ignoreCase());
-		Name name = new Name();
-		name.setLast(search);
-		return nameDao.findAll(Example.of(name, matcher));
-	}
+    public List<Name> findNames(String search) {
+        ExampleMatcher matcher = ExampleMatcher.matching()
+                .withMatcher("last", startsWith().ignoreCase());
+        Name name = new Name();
+        name.setLast(search);
+        return nameDao.findAll(Example.of(name, matcher));
+    }
 
     public void createName(Name name) {
-        //TODO    
+        nameDao.save(name);
     }
-	
+    
+    public void updateName(Name name){
+        nameDao.save(name);
+    }
+    
+    public void deleteName(String id){
+        nameDao.deleteById(id);
+    }
+
 }
