@@ -15,9 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class NameController {
+
     @Autowired
     private NameService nameService;
-    
+
     @RequestMapping(method = POST, path = "/name")
     public Name createName(@RequestBody Name name){
         return nameService.createName(name);
@@ -27,14 +28,14 @@ public class NameController {
     public Name updateName(@RequestBody Name name){
         return nameService.updateName(name);
     }
-    
+
     @RequestMapping(method = GET, path = "/name")
-    public List<Name> getNameList() throws Exception{
+    public List<Name> getNameList() throws Exception {
         return nameService.getAllNames();
     }
-    
+
     @RequestMapping(method = GET, path = "/name/{id}")
-    public Name getName(@PathVariable String id){
+    public Name getName(@PathVariable String id) {
         Name name = nameService.getName(id);
         return name;
     }
@@ -43,4 +44,5 @@ public class NameController {
     public void deleteName(@PathVariable String id){
         nameService.deleteName(id);
     }
+
 }
