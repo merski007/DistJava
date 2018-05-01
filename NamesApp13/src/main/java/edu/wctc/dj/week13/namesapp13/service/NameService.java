@@ -33,8 +33,16 @@ public class NameService {
 		return nameDao.findAll(Example.of(name, matcher));
 	}
 
-    public void createName(Name name) {
-        //TODO    
+    public Name createName(Name name) {
+        return nameDao.save(name);
+    }
+    
+    public Name updateName(Name name){
+        return nameDao.save(name);
+    }
+    
+    public void deleteName(String id){
+        nameDao.deleteById(id);
     }
 	
 }
