@@ -19,8 +19,8 @@ public class NameController {
     private NameService nameService;
     
     @RequestMapping(method = POST, path = "/name")
-    public void createName(@RequestBody Name name){
-        nameService.createName(name);
+    public Name createName(@RequestBody Name name){
+        return nameService.createName(name);
     }
     
     @RequestMapping(method = PUT, path = "/name")
