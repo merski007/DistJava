@@ -2,7 +2,7 @@ drop table name;
 drop table address;
 
 create table name (
-	id varchar(5) primary key,
+	id varchar(50) primary key,
 	firstname varchar(50),
 	lastname varchar(50),
         addressId varchar(5)
