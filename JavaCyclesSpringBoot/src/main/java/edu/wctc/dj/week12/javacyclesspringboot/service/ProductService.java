@@ -5,6 +5,7 @@ import edu.wctc.dj.week12.javacyclesspringboot.model.Product;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
@@ -19,11 +20,9 @@ public class ProductService {
     @Autowired
     private IProductDAO productDao;
 
-    /*
-    public Product getProduct(String prodId) {
-        return productDao.findOne(prodId);
+    public Product getProduct(String id) {
+        return productDao.getOne(id);
     }
-    */
 
     public List<Product> getAllProducts() throws Exception {
         return productDao.findAll();
