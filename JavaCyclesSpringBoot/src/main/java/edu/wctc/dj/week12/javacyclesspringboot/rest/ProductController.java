@@ -5,8 +5,10 @@ import edu.wctc.dj.week12.javacyclesspringboot.service.ProductService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -23,6 +25,11 @@ public class ProductController {
     public Product getProduct(@PathVariable String id){
         Product product = productService.getProduct(id);
         return product;
+    }
+    
+    @RequestMapping(method = POST, path = "/createProduct")
+    public Product createProduct(@RequestBody Product product){
+        return productService.createProduct(product);
     }
     
     

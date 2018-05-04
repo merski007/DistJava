@@ -38,5 +38,9 @@ public class ProductService {
 //        return productDao.findAll(Example.of(product, matcher));
         return productDao.findByType(type);
     }
+    
+    public Product createProduct(Product product){
+        return productDao.save(product);
+    }
 
 }
