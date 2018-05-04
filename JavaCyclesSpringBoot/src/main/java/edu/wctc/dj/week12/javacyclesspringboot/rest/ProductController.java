@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import static org.springframework.web.bind.annotation.RequestMethod.PUT;
@@ -28,14 +29,19 @@ public class ProductController {
         return product;
     }
     
-    @RequestMapping(method = POST, path = "/createProduct")
+    @RequestMapping(method = POST, path = "/products")
     public Product createProduct(@RequestBody Product product){
         return productService.createProduct(product);
     }
     
-    @RequestMapping(method = PUT, path = "/updateProduct")
+    @RequestMapping(method = PUT, path = "/products")
     public Product updateProduct(@RequestBody Product product){
         return productService.updateProduct(product);
+    }
+    
+    @RequestMapping(method = DELETE, path = "/products/{id}")
+    public void deleteProduct(@PathVariable String id){
+        productService.deleteProduct(id);
     }
     
 }

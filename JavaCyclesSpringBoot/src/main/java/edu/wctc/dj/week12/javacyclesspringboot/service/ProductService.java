@@ -46,5 +46,9 @@ public class ProductService {
     public Product updateProduct(Product product){
         return productDao.save(product);
     }
+    
+    public void deleteProduct(String id){
+        productDao.deleteById(id);
+    }
 
 }
