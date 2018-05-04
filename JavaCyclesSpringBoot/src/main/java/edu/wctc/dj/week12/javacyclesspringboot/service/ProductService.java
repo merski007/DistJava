@@ -42,5 +42,9 @@ public class ProductService {
     public Product createProduct(Product product){
         return productDao.save(product);
     }
+    
+    public Product updateProduct(Product product){
+        return productDao.save(product);
+    }
 
 }
